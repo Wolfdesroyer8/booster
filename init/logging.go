@@ -29,7 +29,7 @@ func printMessage(format string, requestedLevel, kernelLevel int, v ...interface
 	}
 
 	msg := fmt.Sprintf(format, v...)
-	_, _ = fmt.Fprint(kmsg, "<", kernelLevel, ">booster: ", msg, "\n")
+	_, _ = fmt.Fprint(kmsg, "<", kernelLevel, ">booster: ", msg, "\n") // TODO: it looks like kmsg does not print large messages
 	if printToConsole {
 		fmt.Println(msg)
 	}
